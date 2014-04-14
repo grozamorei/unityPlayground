@@ -58,7 +58,7 @@
                 } else {
                     float3 frag_to_light_source = _WorldSpaceLightPos0.xyz - vo.pos_world.xyz;
                     float dist = length(frag_to_light_source);
-                    _Atten = 1/_Atten;
+                    _Atten = _Atten/dist;
                     light_dir = normalize(frag_to_light_source);
                 }
 
@@ -122,7 +122,7 @@
                 } else {
                     float3 frag_to_light_source = _WorldSpaceLightPos0.xyz - vo.pos_world.xyz;
                     float dist = length(frag_to_light_source);
-                    _Atten = 1/_Atten;
+                    _Atten = _Atten/dist;
                     light_dir = normalize(frag_to_light_source);
                 }
 
